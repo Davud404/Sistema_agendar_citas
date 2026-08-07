@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres_db:
+    image: postgres:15-alpine
+    container_name: citas_db
+    environment:
+      - POSTGRES_USER=davud
+      - POSTGRES_PASSWORD="12345"
+      - POSTGRES_DB=agendar_citas
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
